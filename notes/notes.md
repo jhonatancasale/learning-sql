@@ -56,5 +56,15 @@ select <field> from <table> where field_a BETWEEN 100 AND 200;
 
 -- IN
 select <field> from <table> where <field_b> in (1, 3, 5, 6, 7);
+```
 
+Missing values
+--------------
+
+NULL, means that value are either missing or unknown
+
+```sql
+select count(*) from <table> where <field> IS NULL;
+-- otherwise
+select <field> from <table> where <another_field> IS NOT NULL;
 ```
