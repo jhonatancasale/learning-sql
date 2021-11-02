@@ -38,7 +38,6 @@ select <field> from <table> where <numeric_field> > criteria;
 
 Logical operators
 -----------------
-
 ```sql
 -- AND
 select <field> from <table> where CONDITION AND CONDITION;
@@ -58,13 +57,18 @@ select <field> from <table> where field_a BETWEEN 100 AND 200;
 select <field> from <table> where <field_b> in (1, 3, 5, 6, 7);
 ```
 
+
 Missing values
 --------------
-
 NULL, means that value are either missing or unknown
-
 ```sql
 select count(*) from <table> where <field> IS NULL;
 -- otherwise
 select <field> from <table> where <another_field> IS NOT NULL;
+```
+
+Like
+```sql
+select <field> from <table> where <field> [not] like 'abc%'; -- expands to 'abc', 'abcD', 'abc123', 'abc...' like a * in regex
+select <field> from <table> where <field> [not] like 'ab_d%'; -- expands to abcd, like a ? in regex
 ```
